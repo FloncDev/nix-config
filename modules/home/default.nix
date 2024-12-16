@@ -1,15 +1,20 @@
-{ inputs, username, host, ... }:
+{ inputs, username, host, pkgs, ... }:
 {
   imports = [
-    ./fish.nix
-    # ./cava.nix
+    ./shell.nix
     ./neovim.nix
     ./qtile
     ./kitty.nix
-    ./rofi.nix
-    ./firefox.nix
-    ./discord.nix
     ./git.nix
     ./spotify.nix
   ];
+
+  home.packages = (with pkgs; [
+    bat
+    firefox
+    rofi
+    (discord.override {
+      withVencord = true;
+    })
+  ]);
 }
