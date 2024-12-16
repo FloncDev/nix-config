@@ -7,9 +7,9 @@
     ./qtile
     ./kitty.nix
     ./rofi.nix
-    ./picom.nix
     ./firefox.nix
     ./discord.nix
     ./git.nix
+    ./spotify.nix
   ];
 }

@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     wget
+    rustup
   ];
 
   time.timeZone = "Europe/London";

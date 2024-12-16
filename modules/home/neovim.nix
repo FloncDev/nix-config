@@ -9,5 +9,10 @@
     gcc
     unzip
     nodejs_23
+
+    nixd
+    alejandra
+    deadnix
+    statix
   ];
 }
