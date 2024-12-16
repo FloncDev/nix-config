@@ -7,6 +7,7 @@
     ./kitty.nix
     ./git.nix
     ./spotify.nix
+    ./japanese.nix
   ];
 
   home.packages = (with pkgs; [
@@ -16,5 +17,9 @@
     (discord.override {
       withVencord = true;
     })
+
+    ## Needed for media controls
+    alsa-utils
+    playerctl
   ]);
 }
