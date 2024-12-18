@@ -4,6 +4,7 @@
     ./shell.nix
     ./neovim.nix
     ./qtile
+    # ./i3.nix
     ./kitty.nix
     ./git.nix
     ./spotify.nix
