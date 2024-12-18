@@ -4,11 +4,12 @@
     xserver = {
       enable = true;
       xkb.layout = "us";
+      windowManager.i3.enable = true;
       windowManager.qtile.enable = true;
     };
 
     displayManager.autoLogin = {
-      enable = true;
+      enable = false;
       user = "${username}";
     };
 
