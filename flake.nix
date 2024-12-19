@@ -20,8 +20,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, darwin, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
+    inherit (self) outputs;
     username = "flonc";
     # pkgs = import nixpkgs {
     #   inherit system;
