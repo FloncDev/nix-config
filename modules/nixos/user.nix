@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, host, ... }:
+{ inputs, username, host, ... }:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -14,11 +14,5 @@
     };
   };
 
-  users.users.${username} = {
-    isNormalUser = true;
-    description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
-  };
-  nix.settings.allowed-users = [ "${username}" ];
+  users.users.${username}.extraGroups = [ "networkmanager" ];
 }

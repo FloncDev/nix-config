@@ -39,5 +39,4 @@
       corner-radius = 5;
     };
   };
-
 }
