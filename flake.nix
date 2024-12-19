@@ -15,8 +15,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
+    inherit (self) outputs;
     username = "flonc";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -35,7 +36,7 @@
       vm = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { host="vm"; inherit self inputs username; };
-	modules = [ ./hosts/vm ];
+	      modules = [ ./hosts/vm ];
       };
     };
   };
