@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 {
   programs.fish = {
     enable = true;
@@ -6,7 +6,7 @@
     interactiveShellInit = "starship init fish | source";
 
     shellAbbrs = {
-      nrs = "sudo nixos-rebuild switch --flake /etc/nixos#desktop";
+      nrs = "sudo nixos-rebuild switch --flake /etc/nixos#${host}";
     };
   };
 

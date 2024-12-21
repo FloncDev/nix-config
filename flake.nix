@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
   let
     inherit (self) outputs;
     username = "flonc";
