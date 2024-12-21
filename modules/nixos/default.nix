@@ -69,5 +69,6 @@
     pulseaudioFull
   ];
 
+  defaultLocale = "en_GB.UTF-8";
   system.stateVersion = "24.05";
 }
