@@ -1,4 +1,4 @@
-{ inputs, username, host, ... }:
+{ inputs, username, host, lib, ... }:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -8,11 +8,14 @@
     users.${username} = {
       imports = [ ../home ];
       home.username = "${username}";
-      home.homeDirectory = "/home/${username}";
+      home.homeDirectory = lib.mkForce "/home/${username}";
       home.stateVersion = "24.05";
       programs.home-manager.enable = true;
     };
   };
 
-  users.users.${username}.extraGroups = [ "networkmanager" ];
+  users.users.${username} = {
+    extraGroups = [ "wheel" "networkmanager" ];
+    isNormalUser = true;
+  };
 }
