@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
   imports = [
-    ../home/kitty.nix
-    ../home/shell.nix
-    ../home/git.nix
+    # ../home/shell.nix
+    # ../home/git.nix
+    ../apps
   ];
 
   home.packages = with pkgs; [
-    raycast
-    discord
+    # raycast
+    # discord
   ];
 }

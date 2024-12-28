@@ -1,7 +1,13 @@
-{ host, username, pkgs, ... }:
+{ host, username, pkgs, inputs, ... }:
 {
+  imports = [
+    inputs.home-manager.darwinModules.home-manager
+  ];
+
+  home-manager.users.${username}.imports = [ ./home.nix ];
+
   nix = {
-    optimise.automatic = true;
+    # optimize.automatic = true;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;

@@ -18,6 +18,8 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:

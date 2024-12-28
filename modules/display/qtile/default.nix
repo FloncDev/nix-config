@@ -5,6 +5,7 @@
     recursive = true;
   };
 
+  # TODO: Move to shared place so i3 can use
   services.picom = {
     enable = true;
     # settings = builtins.readFile ./picom.conf;
@@ -39,4 +40,9 @@
       corner-radius = 5;
     };
   };
+
+  home.packages = with pkgs; [
+    alsa-utils
+    playerctl
+  ];
 }
