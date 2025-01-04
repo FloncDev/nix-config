@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixcord.url = "github:kaylorben/nixcord";
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
 
     darwin = {
       url = "github:LnL7/nix-darwin";
@@ -18,8 +20,6 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:

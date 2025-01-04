@@ -3,16 +3,27 @@
   imports = [
   inputs.home-manager.darwinModules.home-manager
     ../../modules/core
+    # ./homebrew.nix
     # ../../modules/darwin
   ];
 
-  users.users.${username}.home = "/Users/${username}";
+  users = {
+    knownUsers = [ "${username}" ];
+    users.${username} = {
+      home = "/Users/${username}";
+      # Apparently needed
+      uid = 501;
+    };
+  };
+
+  nixpkgs.overlays = [ inputs.nixpkgs-firefox-darwin.overlay ];
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     
     extraSpecialArgs = { inherit inputs username host; };
+
 
     users.${username} = {
       imports = [
@@ -30,6 +41,7 @@
   system.defaults = {
     NSGlobalDomain = {
       "com.apple.swipescrolldirection" = false;
+      AppleICUForce24HourTime = false;
     };
 
     dock = {
@@ -46,6 +58,7 @@
     };
 
     controlcenter.BatteryShowPercentage = true;
+    menuExtraClock.Show24Hour = false;
 
     finder = {
       QuitMenuItem = true;
@@ -60,6 +73,8 @@
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
+
+  security.pam.enableSudoTouchIdAuth = true;
 
   # Temp while I'm setting up
   environment.systemPackages = with pkgs; [

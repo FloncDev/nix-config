@@ -26,6 +26,7 @@
 
   programs.fish.enable = true;
   networking.hostName = "${host}";
+  services.tailscale.enable = true;
   time.timeZone = "Europe/London";
   nixpkgs.config.allowUnfree = true;
 }
