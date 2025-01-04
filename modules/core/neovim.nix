@@ -9,6 +9,7 @@
     gcc
     unzip
     nodejs_23
+    rustup
 
     nixd
     alejandra
