@@ -8,9 +8,7 @@
   ];
 
   home.packages = (with pkgs; [
-    # firefox
-    # (discord.override {
-    #   withVencord = true;
-    # })
+    ani-cli
+    (if pkgs.stdenv.isDarwin then pkgs.iina else pkgs.mpv)
   ]);
 }
