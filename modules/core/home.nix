@@ -9,5 +9,7 @@
   home.packages = with pkgs; [
     bat
     anki-bin
+    direnv
+    devenv
   ];
 }

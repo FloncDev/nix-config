@@ -3,7 +3,10 @@
   programs.fish = {
     enable = true;
 
-    interactiveShellInit = "starship init fish | source";
+    interactiveShellInit = ''
+      starship init fish | source
+      direnv hook fish | source
+    '';
 
     shellAbbrs = {
       nrs = "sudo nixos-rebuild switch --flake /etc/nixos#${host}";
