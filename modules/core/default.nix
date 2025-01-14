@@ -5,9 +5,9 @@
   ];
 
   home-manager.users.${username}.imports = [ ./home.nix ];
-
   nix = {
     # optimize.automatic = true;
+    extraOptions = "trusted-users = ${username} root";
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
