@@ -10,5 +10,6 @@
   home.packages = (with pkgs; [
     ani-cli
     (if pkgs.stdenv.isDarwin then pkgs.iina else pkgs.mpv)
+    jetbrains.rider
   ]);
 }
