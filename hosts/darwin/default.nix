@@ -3,6 +3,7 @@
   imports = [
   inputs.home-manager.darwinModules.home-manager
     ../../modules/core
+    ./yabai.nix
     # ./homebrew.nix
     # ../../modules/darwin
   ];
@@ -74,7 +75,8 @@
     remapCapsLockToEscape = true;
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
+
 
   # Temp while I'm setting up
   environment.systemPackages = with pkgs; [

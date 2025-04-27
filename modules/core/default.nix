@@ -25,6 +25,7 @@
   };
 
   programs.fish.enable = true;
+  programs.gnupg.agent.enable = true;
   networking.hostName = "${host}";
   services.tailscale.enable = true;
   time.timeZone = "Europe/London";
