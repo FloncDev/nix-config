@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # imports = [
-  #   ./user.nix
+    # ./user.nix
   # ];
 
   # programs.fish.shellAliases = {

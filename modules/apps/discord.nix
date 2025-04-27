@@ -18,7 +18,7 @@
           "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
       ];
       plugins = {
-        betterFolders.enable = true;
+        betterFolders.enable = false;
         accountPanelServerProfile.enable = true;
         betterRoleContext.enable = true;
         betterSessions.enable = true;
@@ -50,7 +50,7 @@
         messageTags.enable = true;
         moreKaomoji.enable = true;
         moreUserTags.enable = true;
-        noScreensharePreview.enable = true;
+        # noScreensharePreview.enable = true;
         notificationVolume.enable = true;
         noUnblockToJump.enable = true;
         onePingPerDM.enable = true;
