@@ -10,7 +10,7 @@
       extraPackages = [ pkgs.mesa.drivers ];
     };
 
-    pulseaudio.enable = lib.mkForce false;
+    pulseaudio.enable = false;
   };
 
   services = {
