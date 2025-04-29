@@ -20,39 +20,60 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
-  let
-    inherit (self) outputs;
-    username = "flonc";
-    # pkgs = import nixpkgs {
-    #   inherit system;
-    #   config.allowUnfree = true;
-    # };
-    lib = nixpkgs.lib;
-  in
-  {
-
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { host="desktop"; inherit self inputs username; };
-        modules = [ ./hosts/desktop ];
-      };
-      vm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { host="vm"; inherit self inputs username; };
-	      modules = [ ./hosts/vm ];
-      };
-    };
-
-    darwinConfigurations = {
-      darwin = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { host="darwin"; inherit self inputs username; };
-        modules = [ ./hosts/darwin ];
-      };
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      darwin,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+      username = "flonc";
+      # pkgs = import nixpkgs {
+      #   inherit system;
+      #   config.allowUnfree = true;
+      # };
+      lib = nixpkgs.lib;
+    in
+    {
+
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            host = "desktop";
+            inherit self inputs username;
+          };
+          modules = [ ./hosts/desktop ];
+        };
+        vm = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            host = "vm";
+            inherit self inputs username;
+          };
+          modules = [ ./hosts/vm ];
+        };
+      };
+
+      darwinConfigurations = {
+        darwin = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            host = "darwin";
+            inherit self inputs username;
+          };
+          modules = [ ./hosts/darwin ];
+        };
+      };
+    };
 }
