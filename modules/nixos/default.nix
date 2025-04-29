@@ -1,4 +1,12 @@
-{ pkgs, host, lib, username, inputs, ... }: {
+{
+  pkgs,
+  host,
+  lib,
+  username,
+  inputs,
+  ...
+}:
+{
   imports = [ ./user.nix ];
 
   hardware = {
@@ -55,7 +63,11 @@
 
   networking = {
     networkmanager.enable = true;
-    nameservers = [ "8.8.8.8" "8.8.4.4" "1.1.1.1" ];
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+      "1.1.1.1"
+    ];
     firewall = {
       enable = true;
       # TODO: Figure out how this would work with servers
@@ -72,6 +84,7 @@
   environment.systemPackages = with pkgs; [
     pulseaudioFull
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    libnotify
   ];
 
   # TODO: Move this when making WM stuff into modules

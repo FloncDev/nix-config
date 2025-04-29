@@ -6,6 +6,11 @@
     ./git.nix
   ];
 
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   home.packages = with pkgs; [
     bat
     anki-bin
