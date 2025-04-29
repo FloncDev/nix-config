@@ -1,15 +1,30 @@
-{ host, username, pkgs, inputs, ... }:
+{
+  host,
+  username,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.home-manager.darwinModules.home-manager
   ];
 
-  home-manager.users.${username}.imports = [ ./home.nix ];
+  home-manager.users.${username}.imports = [
+    ./home.nix
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ];
+
+  catppuccin.enable = true;
+
   nix = {
     # optimize.automatic = true;
     extraOptions = "trusted-users = ${username} root";
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
       allowed-users = [
         "${username}"

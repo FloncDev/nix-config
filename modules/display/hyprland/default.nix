@@ -3,6 +3,7 @@
   imports = [
     ./waybar.nix
     ./hyprpaper.nix
+    ./mako.nix
   ];
 
   wayland.windowManager.hyprland = {

@@ -1,6 +1,9 @@
 { ... }:
 {
   home.file.".config/waybar/style.css".source = ./style.css;
+
+  catppuccin.waybar.mode = "createLink";
+
   programs.waybar = {
     enable = true;
 

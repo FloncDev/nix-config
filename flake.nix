@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixcord.url = "github:kaylorben/nixcord";
     nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
+    catppuccin.url = "github:catppuccin/nix";
 
     darwin = {
       url = "github:LnL7/nix-darwin";
@@ -33,6 +34,7 @@
       nixpkgs,
       home-manager,
       darwin,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -53,7 +55,10 @@
             host = "desktop";
             inherit self inputs username;
           };
-          modules = [ ./hosts/desktop ];
+          modules = [
+            ./hosts/desktop
+            catppuccin.nixosModules.catppuccin
+          ];
         };
         vm = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -61,7 +66,10 @@
             host = "vm";
             inherit self inputs username;
           };
-          modules = [ ./hosts/vm ];
+          modules = [
+            ./hosts/vm
+            catppuccin.nixosModules.catppuccin
+          ];
         };
       };
 
@@ -72,7 +80,10 @@
             host = "darwin";
             inherit self inputs username;
           };
-          modules = [ ./hosts/darwin ];
+          modules = [
+            ./hosts/darwin
+            catppuccin.darwinModules.catppuccin
+          ];
         };
       };
     };
