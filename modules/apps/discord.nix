@@ -15,7 +15,7 @@
 
     config = {
       themeLinks = [
-          "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
       ];
       plugins = {
         betterFolders.enable = false;
