@@ -1,8 +1,5 @@
-{ pkgs, host, lib, username, ...}:
-{
-  imports = [
-    ./user.nix
-  ];
+{ pkgs, host, lib, username, inputs, ... }: {
+  imports = [ ./user.nix ];
 
   hardware = {
     graphics = {
@@ -11,6 +8,13 @@
     };
 
     pulseaudio.enable = false;
+
+    # TODO: Move all graphics and audio stuff to display/
+    nvidia = {
+      modesetting.enable = true;
+      open = true;
+      nvidiaSettings = true;
+    };
   };
 
   services = {
@@ -56,7 +60,7 @@
       enable = true;
       # TODO: Figure out how this would work with servers
       allowedTCPPorts = [ 22 ];
-      allowedUDPPorts = [];
+      allowedUDPPorts = [ ];
     };
   };
 
@@ -67,7 +71,12 @@
 
   environment.systemPackages = with pkgs; [
     pulseaudioFull
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
+
+  # TODO: Move this when making WM stuff into modules
+  # This should be in the hyprland config but I need it in a nixos module :(
+  programs.hyprland.enable = true;
 
   i18n.defaultLocale = "en_GB.UTF-8";
   system.stateVersion = "24.05";

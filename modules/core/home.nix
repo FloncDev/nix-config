@@ -11,5 +11,9 @@
     anki-bin
     direnv
     devenv
+    jq
+    btop
+    nil
+    nixfmt-rfc-style
   ];
 }
