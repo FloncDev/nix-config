@@ -1,4 +1,10 @@
-{ pkgs, inputs, username, host, ... }:
+{
+  pkgs,
+  inputs,
+  username,
+  host,
+  ...
+}:
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -8,6 +14,10 @@
     # ./../../modules/nixos
     # ./../../modules/core
   ];
+
+  specialisation."desktop".configuration = {
+    environment.etc."specialisation".text = "desktop";
+  };
 
   # home-manager = {
   #   useUserPackages = true;
