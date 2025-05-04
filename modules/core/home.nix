@@ -20,5 +20,6 @@
     btop
     nil
     nixfmt-rfc-style
+    nh
   ];
 }

@@ -7,7 +7,10 @@
   ...
 }:
 {
-  imports = [ ./user.nix ];
+  imports = [
+    ./user.nix
+    ./steam.nix
+  ];
 
   hardware = {
     graphics = {
