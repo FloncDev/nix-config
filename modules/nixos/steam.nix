@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # TODO: Somehow move this to /modules/apps
   programs.steam = {
@@ -7,4 +7,8 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    protonup-qt
+  ];
 }

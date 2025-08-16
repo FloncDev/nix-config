@@ -12,7 +12,7 @@
 
   home-manager.users.${username}.imports = [
     ./home.nix
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   catppuccin.enable = true;
@@ -39,8 +39,35 @@
     shell = pkgs.fish;
   };
 
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
+  nixpkgs.overlays = [
+    inputs.nix-your-shell.overlays.default
+  ];
+
+  environment.systemPackages = with pkgs; [
+    inputs.nix-your-shell
+  ];
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+    };
+  };
+
   programs.fish.enable = true;
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    # enableExtraSocket = true;
+  };
   networking.hostName = "${host}";
   services.tailscale.enable = true;
   time.timeZone = "Europe/London";

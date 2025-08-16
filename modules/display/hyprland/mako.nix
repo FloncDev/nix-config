@@ -3,9 +3,15 @@
   services.mako = {
     enable = true;
 
-    font = "JetBrainsMono Nerd Font 12";
+    settings = {
+      font = "JetBrainsMono Nerd Font 12";
 
-    borderRadius = 5;
-    defaultTimeout = 15000;
+      border-radius = "5";
+      default-timeout = "15000";
+
+      layer = "overlay";
+      anchor = "top-left";
+      output = "HDMI-A-1";
+    };
   };
 }

@@ -1,4 +1,10 @@
-{ inputs, username, host, lib, ... }:
+{
+  inputs,
+  username,
+  host,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -15,7 +21,12 @@
   };
 
   users.users.${username} = {
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "keyd"
+      "docker"
+    ];
     isNormalUser = true;
   };
 }

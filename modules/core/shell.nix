@@ -1,11 +1,19 @@
-{ pkgs, host, ... }:
+{
+  pkgs,
+  host,
+  ...
+}:
 {
   programs.fish = {
     enable = true;
 
     interactiveShellInit = ''
+      if test -z "$DISPLAY"; and test (tty) = "/dev/tty1"; then
+        exec Hyprland
+      end
       starship init fish | source
       direnv hook fish | source
+      nix-your-shell fish | source
     '';
 
     shellAbbrs = {

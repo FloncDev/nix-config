@@ -1,16 +1,25 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [
-    inputs.nixcord.homeManagerModules.nixcord
+    inputs.nixcord.homeModules.nixcord
   ];
 
   programs.nixcord = {
     enable = true;
 
-    discord = {
+    # discord = {
+    #   enable = true;
+    #   vencord.package = pkgs.vencord;
+    #   openASAR.enable = true;
+    # };
+
+    vesktop = {
       enable = true;
-      vencord.package = pkgs.vencord;
-      openASAR.enable = true;
     };
 
     config = {
