@@ -1,4 +1,10 @@
-{ inputs, username, host, lib, ... }:
+{
+  inputs,
+  username,
+  host,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -6,7 +12,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
-      imports = [ ../home ];
+      imports = [ ./home.nix ];
       home.username = "${username}";
       home.homeDirectory = lib.mkForce "/home/${username}";
       home.stateVersion = "24.05";
@@ -15,7 +21,12 @@
   };
 
   users.users.${username} = {
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "keyd"
+      "docker"
+    ];
     isNormalUser = true;
   };
 }
