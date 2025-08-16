@@ -14,8 +14,8 @@
     [
       ani-cli
       (if pkgs.stdenv.isDarwin then pkgs.iina else pkgs.mpv)
-      jetbrains.rider
-      jetbrains.datagrip
+      # jetbrains.rider
+      # jetbrains.datagrip
       # Currently using vscode sync instead of nix for config
       vscode
       lunar-client
