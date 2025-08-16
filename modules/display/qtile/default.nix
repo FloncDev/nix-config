@@ -5,12 +5,16 @@
     recursive = true;
   };
 
+  # TODO: Move to shared place so i3 can use
   services.picom = {
-    enable = true;
+    enable = false;
     # settings = builtins.readFile ./picom.conf;
 
     shadow = true;
-    shadowOffsets = [(-7) (-7)];
+    shadowOffsets = [
+      (-7)
+      (-7)
+    ];
     shadowExclude = [
       "name = 'Notification'"
       "class_g = 'Conky'"
@@ -21,7 +25,10 @@
     ];
 
     fade = true;
-    fadeSteps = [0.08 0.08];
+    fadeSteps = [
+      0.08
+      0.08
+    ];
 
     inactiveOpacity = 0.95;
     opacityRules = [
@@ -39,4 +46,9 @@
       corner-radius = 5;
     };
   };
+
+  home.packages = with pkgs; [
+    alsa-utils
+    playerctl
+  ];
 }

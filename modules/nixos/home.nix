@@ -4,6 +4,7 @@
     # ../home/shell.nix
     # ../home/git.nix
     ../apps
+    ../display
   ];
 
   home.packages = with pkgs; [
