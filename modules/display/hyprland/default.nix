@@ -20,7 +20,6 @@
       ];
 
       input = {
-        kb_options = "caps:swapescape";
         accel_profile = "flat";
         sensitivity = 0;
         follow_mouse = 2;
@@ -36,6 +35,11 @@
       decoration = {
         rounding = 3;
         inactive_opacity = 0.96;
+      };
+
+      dwindle = {
+        preserve_split = true;
+        smart_split = false; # Also enables preserve_split
       };
 
       bind = [
@@ -95,6 +99,14 @@
         # Apps
         "$mod ALT, f, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, return, exec, $terminal"
+
+        # Mute Mic
+        ", mouse:277, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+
+        # Screenshots
+        ", Print, exec, hyprshot -m region --clipboard-only"
+        "SHIFT, Print, exec, hyprshot -m window -m active --clipboard-only"
+        "Control_L, Print, exec, hyprshot -m output -m active --clipboard-only"
       ];
 
       bindm = [
@@ -121,6 +133,7 @@
         "NIXOS_OZONE_WL=1"
         "HYORCURSOR_THEME,rose-pine-hyprcursor"
         "XDG_SESSION_TYPE,wayland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
         "GBM_BACKEND,nvidia-drm"
       ];
 
@@ -128,12 +141,34 @@
         "blur, waybar, ignorealpha"
       ];
 
+      windowrule = [
+        "workspace:2, class:vesktop"
+        "opacity:1, content:video"
+      ];
+
       cursor = {
         inactive_timeout = 0;
         no_hardware_cursors = true;
       };
 
-      exec-once = [ "waybar" ];
+      debug = {
+        disable_logs = false;
+      };
+
+      exec-once = [
+        "waybar"
+        "hyprpaper"
+        "[workspace 1 silent] firefox"
+        "[workspace 2 silent] vesktop"
+        "[workspace 10 silent] spotify"
+      ];
     };
   };
+
+  services.playerctld.enable = true;
+
+  home.packages = with pkgs; [
+    hyprshot
+    playerctl
+  ];
 }

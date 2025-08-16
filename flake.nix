@@ -26,6 +26,11 @@
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-your-shell = {
+      url = "github:MercuryTechnologies/nix-your-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
