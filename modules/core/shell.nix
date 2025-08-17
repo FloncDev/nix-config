@@ -26,6 +26,18 @@
 
     settings = {
       add_newline = true;
+      right_format = "$sudo $time";
+      time = {
+        disabled = false;
+        use_12hr = true;
+        style = "bright-black";
+        format = "[$time]($style)";
+      };
+      sudo = {
+        disabled = false;
+        symbol = "*";
+        format = "[$symbol]($style)";
+      };
     };
   };
 }
