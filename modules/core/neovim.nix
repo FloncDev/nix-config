@@ -4,7 +4,7 @@
     enable = true;
     vimAlias = true;
     withNodeJs = true;
-    plugins = [];
+    plugins = [ ];
   };
 
   home.packages = with pkgs; [
