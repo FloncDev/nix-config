@@ -21,5 +21,6 @@
     nil
     nixfmt-rfc-style
     nh
+    dua
   ];
 }
