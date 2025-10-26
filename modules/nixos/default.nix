@@ -23,9 +23,11 @@
     # TODO: Move all graphics and audio stuff to display/
     nvidia = {
       modesetting.enable = true;
-      open = true;
+      open = false;
       nvidiaSettings = true;
     };
+
+    bluetooth.enable = true;
   };
 
   services = {
@@ -52,6 +54,7 @@
       xkb.layout = "us";
 
       windowManager.qtile.enable = false;
+      videoDrivers = [ "nvidia" ];
     };
 
     earlyoom = {
@@ -60,6 +63,24 @@
       freeMemThreshold = 7;
       freeMemKillThreshold = 2;
     };
+
+    hardware.openrgb.enable = true;
+    blueman.enable = true;
+    joycond.enable = true;
+
+    # displayManager.lemurs = {
+    #   enable = true;
+    # settings = {
+
+    # };
+    # };
+  };
+
+  environment.etc."lemurs/wayland/hyprland" = {
+    text = ''
+      exec Hyprland
+    '';
+    mode = "0755";
   };
 
   boot = {
@@ -79,6 +100,8 @@
     '';
 
     kernel.sysctl."kernel.sysrq" = 1;
+
+    blacklistedKernelModules = [ "nouveau" ];
   };
 
   networking = {
@@ -100,6 +123,9 @@
     rtkit.enable = true;
     sudo.enable = true;
     polkit.enable = true;
+    sudo.extraConfig = ''
+      Defaults pwfeedback
+    '';
   };
 
   xdg.portal = {

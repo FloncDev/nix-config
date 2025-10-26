@@ -16,6 +16,10 @@
         margin = "10 10 10 0";
 
         modules-left = [ "hyprland/workspaces" ];
+        modules-center = [
+          "custom/power"
+          "custom/lock"
+        ];
         modules-right = [
           "tray"
           "memory"
@@ -38,6 +42,7 @@
               10
             ];
           };
+          move-to-monitor = true;
         };
 
         clock = {
@@ -52,6 +57,31 @@
             warning = 80;
             critical = 95;
           };
+        };
+
+        "group/group-power" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 500;
+            children-class = "power-buttons";
+            transition-left-to-right = false;
+          };
+          modules = [
+            "custom/power"
+            "custom/lock"
+          ];
+        };
+
+        "custom/power" = {
+          format = "";
+          tooltip = false;
+          on-click = "shutdown now";
+        };
+
+        "custom/lock" = {
+          format = "󰍁";
+          tooltip = false;
+          on-click = "hyprctl dispatch lock";
         };
 
       };

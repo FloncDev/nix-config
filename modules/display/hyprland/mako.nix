@@ -10,7 +10,7 @@
       default-timeout = "15000";
 
       layer = "overlay";
-      anchor = "top-left";
+      anchor = "top-right";
       output = "HDMI-A-1";
     };
   };

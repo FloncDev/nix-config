@@ -23,6 +23,7 @@
         accel_profile = "flat";
         sensitivity = 0;
         follow_mouse = 2;
+        numlock_by_default = true;
       };
 
       general = {
@@ -35,6 +36,10 @@
       decoration = {
         rounding = 3;
         inactive_opacity = 0.96;
+        blur = {
+          special = true;
+          passes = 2;
+        };
       };
 
       dwindle = {
@@ -58,6 +63,8 @@
         "$mod, 8, focusworkspaceoncurrentmonitor, 8"
         "$mod, 9, focusworkspaceoncurrentmonitor, 9"
         "$mod, 0, focusworkspaceoncurrentmonitor, 10"
+
+        "ALT, tab, togglespecialworkspace"
 
         # Move to workspaces
         "$mod SHIFT, 1, movetoworkspace,1"
@@ -142,8 +149,15 @@
       ];
 
       windowrule = [
-        "workspace:2, class:vesktop"
-        "opacity:1, content:video"
+        "workspace 2 silent, class:vesktop"
+        # "noinitialfocus, class:vesktop"
+        "stayfocused, class:Rofi"
+        "opacity 1, content:video"
+      ];
+
+      workspace = [
+        "1, monitor:DP-1"
+        "s[true], gapsout:100"
       ];
 
       cursor = {
@@ -160,7 +174,7 @@
         "hyprpaper"
         "[workspace 1 silent] firefox"
         "[workspace 2 silent] vesktop"
-        "[workspace 10 silent] spotify"
+        "[workspace special silent] spotify"
       ];
     };
   };

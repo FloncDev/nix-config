@@ -14,9 +14,18 @@ window#waybar.empty {
 }
 
 .modules-left,
+.modules-center,
 .modules-right {
     background-color: rgba(30, 30, 46, 0.8);
     border-radius: 3px;
+}
+
+.modules-center {
+    padding: 10px 0px;
+}
+
+#custom-power {
+    color: #f38ba8;
 }
 
 .modules-right {

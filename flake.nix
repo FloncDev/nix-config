@@ -58,7 +58,11 @@
           system = "x86_64-linux";
           specialArgs = {
             host = "desktop";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              ;
           };
           modules = [
             ./hosts/desktop
@@ -69,7 +73,11 @@
           system = "x86_64-linux";
           specialArgs = {
             host = "vm";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              ;
           };
           modules = [
             ./hosts/vm
@@ -83,7 +91,11 @@
           system = "aarch64-darwin";
           specialArgs = {
             host = "darwin";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              ;
           };
           modules = [
             ./hosts/darwin

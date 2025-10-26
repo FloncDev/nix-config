@@ -22,6 +22,13 @@
       prismlauncher
       firefox
       dbvisualizer
+      jdk21
+      httpie-desktop
+      lumafly
+      pavucontrol
+      overlayed
+      chromium
+      scrcpy
     ]
   );
 }
