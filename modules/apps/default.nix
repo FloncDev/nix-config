@@ -33,6 +33,9 @@
       multiviewer-for-f1
       wgnord
       gamescope
+      arduino-ide
+      qmk
+      dos2unix
     ]
   );
 }

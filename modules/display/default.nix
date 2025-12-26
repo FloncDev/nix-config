@@ -2,7 +2,7 @@
 {
   # TODO: Make some sort of module thing so I can change between WMs easier
   imports = [
-    # ./qtile
+    ./qtile
     # ./i3.nix
     ./hyprland
     ./japanese.nix

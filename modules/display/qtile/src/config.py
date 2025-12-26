@@ -11,10 +11,38 @@ terminal = "kitty"
 moved = []
 
 
+def configure_monitors():
+    """Configure monitors: left monitor rotated 270°, right monitor normal"""
+    subprocess.run(
+        [
+            "xrandr",
+            "--output",
+            "HDMI-0",
+            "--rotate",
+            "left",
+            "--pos",
+            "0x0",
+            "--output",
+            "DP-4",
+            "--rotate",
+            "normal",
+            "--pos",
+            "1080x0",
+        ]
+    )
+
+
 @hook.subscribe.startup_once
 def start_once():
     script = os.path.expanduser("~/.config/qtile/start.sh")
     subprocess.run(script)
+    configure_monitors()
+
+
+@hook.subscribe.startup
+def startup():
+    """Run on every startup including config reload"""
+    configure_monitors()
 
 
 #     lazy.spawn("firefox")
@@ -197,6 +225,18 @@ screens = [
     Screen(
         wallpaper="~/.config/qtile/evening-sky.png",
         wallpaper_mode="stretch",
+        x=0,
+        y=0,
+        width=1080,
+        height=1920,
+    ),
+    Screen(
+        wallpaper="~/.config/qtile/evening-sky.png",
+        wallpaper_mode="stretch",
+        x=1080,
+        y=0,
+        width=2560,
+        height=1440,
         top=bar.Bar(
             [
                 widget.Spacer(length=10),
@@ -220,10 +260,6 @@ screens = [
         #         widget.Clock(format="%I:%M %p")
         #         ], 30
         #     )
-    ),
-    Screen(
-        wallpaper="~/.config/qtile/evening-sky.png",
-        wallpaper_mode="stretch",
     ),
 ]
 
