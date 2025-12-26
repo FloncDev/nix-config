@@ -26,6 +26,8 @@
       "networkmanager"
       "keyd"
       "docker"
+      "nordvpn"
+      "dailout"
     ];
     isNormalUser = true;
   };

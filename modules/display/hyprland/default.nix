@@ -15,8 +15,9 @@
       "$mod" = "SUPER";
 
       monitor = [
-        "DP-1, 1920x1080, 1920x0, 1"
-        "HDMI-A-1, 1920x1080, 0x0, 1"
+        "DP-3, 2560x1440@165, 1080x480, 1"
+        # "DP-2, 1920x1080, 0x1080, 1"
+        "HDMI-A-1, 1920x1080, 0x0, 1, transform, 1"
       ];
 
       input = {
@@ -48,7 +49,7 @@
       };
 
       bind = [
-        "$mod, w, killactive"
+        "$mod, q, killactive"
         "$mod, space, exec, rofi -show run"
 
         # Workspaces
@@ -63,6 +64,7 @@
         "$mod, 8, focusworkspaceoncurrentmonitor, 8"
         "$mod, 9, focusworkspaceoncurrentmonitor, 9"
         "$mod, 0, focusworkspaceoncurrentmonitor, 10"
+        "$mod, f2, workspace, name:games"
 
         "ALT, tab, togglespecialworkspace"
 
@@ -77,6 +79,7 @@
         "$mod SHIFT, 8, movetoworkspace,8"
         "$mod SHIFT, 9, movetoworkspace,9"
         "$mod SHIFT, 0, movetoworkspace,10"
+        "$mod SHIFT, f2, movetoworkspace, name:games"
 
         # Focus next monitor
         "$mod, grave, focusmonitor, +1"
@@ -156,8 +159,9 @@
       ];
 
       workspace = [
-        "1, monitor:DP-1"
+        "1, monitor:DP-3"
         "s[true], gapsout:100"
+        "name:games, monitor:DP-1, shadow:false, decorate:false, rounding:false, border:false, gapsout:0"
       ];
 
       cursor = {

@@ -12,7 +12,7 @@
         layer = "top";
         position = "right";
         reload_style_on_change = true;
-        output = [ "DP-1" ];
+        output = [ "DP-3" ];
         margin = "10 10 10 0";
 
         modules-left = [ "hyprland/workspaces" ];

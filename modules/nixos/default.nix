@@ -12,6 +12,7 @@
     ./user.nix
     ./steam.nix
     ./keyd.nix
+    ./nordvpn.nix
   ];
 
   hardware = {
@@ -27,7 +28,12 @@
       nvidiaSettings = true;
     };
 
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General.DeviceId = "bluetooth:004C:0000:0000";
+      };
+    };
   };
 
   services = {
@@ -50,10 +56,10 @@
     };
 
     xserver = {
-      enable = false;
+      enable = true;
       xkb.layout = "us";
 
-      windowManager.qtile.enable = false;
+      windowManager.qtile.enable = true;
       videoDrivers = [ "nvidia" ];
     };
 
@@ -74,6 +80,17 @@
 
     # };
     # };
+
+    openvpn = {
+      #enable = true;
+      servers.nordvpn = {
+        config = ''
+                    config /etc/nixos/udp2.ovpn
+          	  auth-user-pass /etc/nixos/nord.auth
+          	'';
+        autoStart = false;
+      };
+    };
   };
 
   environment.etc."lemurs/wayland/hyprland" = {
@@ -92,12 +109,12 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    extraModulePackages = with config.boot.kernelPackages; [
-      v4l2loopback
-    ];
-    extraModprobeConfig = ''
-      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    '';
+    # extraModulePackages = with config.boot.kernelPackages; [
+    #   v4l2loopback
+    # ];
+    # extraModprobeConfig = ''
+    #   options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    # '';
 
     kernel.sysctl."kernel.sysrq" = 1;
 
@@ -123,9 +140,32 @@
     rtkit.enable = true;
     sudo.enable = true;
     polkit.enable = true;
-    sudo.extraConfig = ''
-      Defaults pwfeedback
-    '';
+    sudo = {
+      extraConfig = ''
+        Defaults pwfeedback
+      '';
+
+      extraRules = [
+        {
+          # Don't require password for shutdown
+          groups = [ "wheel" ];
+          commands = [
+            {
+              command = "/run/current-system/sw/bin/poweroff";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "/run/current-system/sw/bin/shutdown";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "/run/current-system/sw/bin/reboot";
+              options = [ "NOPASSWD" ];
+            }
+          ];
+        }
+      ];
+    };
   };
 
   xdg.portal = {
@@ -151,6 +191,8 @@
     enable = true;
     withUWSM = true;
   };
+
+  flonc.services.custom.nordvpn.enable = true;
 
   virtualisation.docker.enable = true;
 

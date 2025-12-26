@@ -29,6 +29,10 @@
       overlayed
       chromium
       scrcpy
+      lld
+      multiviewer-for-f1
+      wgnord
+      gamescope
     ]
   );
 }
