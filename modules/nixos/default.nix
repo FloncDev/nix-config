@@ -85,7 +85,7 @@
       #enable = true;
       servers.nordvpn = {
         config = ''
-                    config /etc/nixos/udp2.ovpn
+              config /etc/nixos/udp2.ovpn
           	  auth-user-pass /etc/nixos/nord.auth
           	'';
         autoStart = false;
