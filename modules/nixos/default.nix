@@ -56,10 +56,10 @@
     };
 
     xserver = {
-      enable = true;
+      enable = false;
       xkb.layout = "us";
 
-      windowManager.qtile.enable = true;
+      windowManager.qtile.enable = false;
       videoDrivers = [ "nvidia" ];
     };
 
