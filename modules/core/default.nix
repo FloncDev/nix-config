@@ -1,14 +1,20 @@
 {
+  lib,
   host,
   username,
+  system,
   pkgs,
   inputs,
   ...
 }:
 {
-  imports = [
-    inputs.home-manager.darwinModules.home-manager
-  ];
+  imports =
+    lib.optionals (system == "x86_64-linux") [
+      inputs.home-manager.nixosModules.home-manager
+    ]
+    ++ lib.optionals (lib.hasSuffix "darwin" system) [
+      inputs.home-manager.darwinModules.home-manager
+    ];
 
   home-manager.users.${username}.imports = [
     ./home.nix

@@ -63,6 +63,7 @@
               inputs
               username
               ;
+            system = "x86_64-linux";
           };
           modules = [
             ./hosts/desktop
@@ -78,6 +79,7 @@
               inputs
               username
               ;
+            system = "x86_64-linux";
           };
           modules = [
             ./hosts/vm
@@ -96,6 +98,7 @@
               inputs
               username
               ;
+            system = "aarch64-darwin";
           };
           modules = [
             ./hosts/darwin
