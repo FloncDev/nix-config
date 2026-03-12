@@ -5,6 +5,7 @@
       minimal
       home-manager
       networking
+      ssh
     ];
 
   };

@@ -9,7 +9,6 @@
         default
         boot
         hyprland
-        ssh
       ];
 
       virtualisation.vmVariant.virtualisation = {
