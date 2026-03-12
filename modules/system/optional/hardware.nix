@@ -34,5 +34,7 @@
         };
         usb-modeswitch.enable = true;
       };
+
+      services.blueman.enable = true;
     };
 }
