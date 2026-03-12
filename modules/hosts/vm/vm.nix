@@ -7,7 +7,7 @@
     {
       imports = with inputs.self.modules.nixos; [
         default
-        systemd-boot
+        boot
         hyprland
         ssh
       ];
