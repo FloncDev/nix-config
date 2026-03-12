@@ -18,7 +18,6 @@
       programs.starship = {
         enable = true;
 
-        # TODO: Make sure this works
         settings = {
           add_newline = true;
           right_format = "$sudo $time";
