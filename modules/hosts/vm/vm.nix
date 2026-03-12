@@ -8,6 +8,7 @@
       imports = with inputs.self.modules.nixos; [
         default
         boot
+        default-display
         hyprland
       ];
 
