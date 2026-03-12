@@ -1,4 +1,3 @@
-# Imported per-host
 { inputs, ... }:
 {
   # TODO: All stuff for an actual nixos system
