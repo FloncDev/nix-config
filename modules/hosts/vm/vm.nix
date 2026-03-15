@@ -10,6 +10,7 @@
         boot
         default-display
         hyprland
+        default-apps
       ];
 
       virtualisation.vmVariant.virtualisation = {
