@@ -17,13 +17,6 @@
         kernel.sysctl."kernel.sysrq" = 1;
 
         blacklistedKernelModules = [ "nouveau" ];
-
-        # TODO: Move to desktop when added
-        # # Only show main monitor on boot
-        # kernelParams = [
-        #   "video=DP-3:2560x1440@60e"
-        #   "video=HDMI-A-1:e"
-        # ];
       };
     };
 }
