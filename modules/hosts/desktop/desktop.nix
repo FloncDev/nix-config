@@ -13,6 +13,8 @@
         hyprland
         default-apps
         earlyoom
+
+        steam
       ];
 
       # Only show main monitor on boot
