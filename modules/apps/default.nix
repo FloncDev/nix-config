@@ -6,11 +6,13 @@
     {
       imports = with inputs.self.modules.nixos; [
         # Imports go here
+        # TODO: Steam
       ];
 
       home-manager.sharedModules = with inputs.self.modules.homeManager; [
         # More imports that are home managers here
         discord
+        spotify
         {
           home.packages = with pkgs; [
             # Desktop applications go here

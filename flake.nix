@@ -17,5 +17,6 @@
     nixcord.url = "github:kaylorben/nixcord";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
+    spicetify-nix.url = "github:gerg-l/spicetify-nix";
   };
 }
