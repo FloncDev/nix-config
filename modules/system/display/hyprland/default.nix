@@ -27,6 +27,10 @@
   flake.modules.homeManager.hyprland =
     { pkgs, ... }:
     {
+      imports = with inputs.self.modules.homeManager; [
+        mako
+      ];
+
       wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
