@@ -11,6 +11,7 @@
         default-display
         hyprland
         default-apps
+        earlyoom
       ];
 
       # Only show main monitor on boot
