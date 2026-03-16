@@ -29,6 +29,8 @@
     {
       imports = with inputs.self.modules.homeManager; [
         mako
+        hyprpaper
+        waybar
       ];
 
       wayland.windowManager.hyprland = {
