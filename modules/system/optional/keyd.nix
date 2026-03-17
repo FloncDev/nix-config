@@ -5,7 +5,7 @@
     services.keyd = {
       enable = true;
 
-      keyboard = {
+      keyboards = {
         default = {
           ids = [ "*" ];
           settings = {
