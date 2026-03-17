@@ -13,6 +13,7 @@
         hyprland
         default-apps
         earlyoom
+        keyd
 
         steam
       ];
