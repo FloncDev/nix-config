@@ -1,6 +1,6 @@
 # TODO: Use something like nixvim? Also setup an actual vim config :)
 {
-  flake.modules.homeManger.neovim =
+  flake.modules.homeManager.neovim =
     { pkgs, ... }:
     {
       programs.neovim = {
