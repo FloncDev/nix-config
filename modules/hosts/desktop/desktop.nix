@@ -2,7 +2,7 @@
 {
   flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" "desktop";
 
-  flake.modles.nixos.desktop =
+  flake.modules.nixos.desktop =
     { pkgs, lib, ... }:
     {
       imports = with inputs.self.modules.nixos; [
@@ -16,12 +16,13 @@
         keyd
         catppuccin
 
+        flonc
         steam
       ];
 
       # Only show main monitor on boot
       # Not sure if this actually works
-      kernelParams = [
+      boot.kernelParams = [
         "video=DP-3:2560x1440@60e"
         "video=HDMI-A-1:e"
       ];
