@@ -32,6 +32,8 @@
         # ...
         imports = with self.modules.homeManager; [
           kitty
+          cli
+          neovim
         ];
 
         programs.git = {
