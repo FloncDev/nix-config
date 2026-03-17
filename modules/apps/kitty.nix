@@ -23,7 +23,7 @@
         };
 
         # TODO: Add catppuccin theme
-        # themeFile = "Catppuccin-Mocha";
+        themeFile = "Catppuccin-Mocha";
       };
 
     };

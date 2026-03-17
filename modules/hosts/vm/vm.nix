@@ -11,6 +11,7 @@
         default-display
         hyprland
         default-apps
+        catppuccin
       ];
 
       virtualisation.vmVariant.virtualisation = {

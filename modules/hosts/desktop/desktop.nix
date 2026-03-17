@@ -14,6 +14,7 @@
         default-apps
         earlyoom
         keyd
+        catppuccin
 
         steam
       ];
