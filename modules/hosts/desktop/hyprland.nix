@@ -5,6 +5,7 @@
       inputs.self.modules.homeManager.desktop-hyprland
     ];
   };
+
   flake.modules.homeManager.desktop-hyprland = {
     wayland.windowManager.hyprland = {
       settings = {
@@ -14,8 +15,17 @@
           "HDMI-A-1, 1920x1080, 0x0, 1, transform, 1"
         ];
 
+        workspace = [
+          "1, monitor:DP-1"
+          # TODO: Make games go to this workspace
+          "name:hames, monitor:DP-1, shadow:false, decorate:false, rounding:false, border:false, gapsout:0"
+        ];
+
         # TODO: Some more of these
       };
     };
+
+    # Have bar only on second monitor
+    programs.waybar.settings.secondaryBar.output = [ "HDMI-A-1 "];
   };
 }
