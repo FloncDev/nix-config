@@ -19,13 +19,12 @@
         accelSpeed = "-2.8";
       };
 
-      # I use wayland so this might not be needed, uncomment if something breaks :)
-      # xserver = {
-      #   enable = false;
-      #   xkb.layout = "us";
+      xserver = {
+        enable = false;
+        xkb.layout = "us";
 
-      #   videoDrivers = [ "nvidia" ];
-      # };
+        videoDrivers = [ "nvidia" ];
+      };
 
       dbus.enable = true;
       gnome.gnome-keyring.enable = true;
