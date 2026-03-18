@@ -8,6 +8,7 @@
       imports = with inputs.self.modules.nixos; [
         default
         boot
+        hardware
         default-display
         lemurs
         hyprland
