@@ -22,7 +22,6 @@
           disable_ligatures = "never";
         };
 
-        # TODO: Add catppuccin theme
         themeFile = "Catppuccin-Mocha";
       };
 
