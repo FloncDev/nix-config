@@ -19,10 +19,9 @@
         jq
         nh
 
-        
         # Need to figure out devenvs for this
         nixd
-        nixfmt-rfc-style  
+        nixfmt-rfc-style
       ];
     };
 }
