@@ -11,6 +11,12 @@
 
     home-manager.sharedModules = [
       inputs.catppuccin.homeModules.catppuccin
+      {
+        catppuccin = {
+          enable = true;
+          flavor = "mocha";
+        };
+      }
     ];
   };
 }

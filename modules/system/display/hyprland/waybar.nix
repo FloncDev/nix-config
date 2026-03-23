@@ -4,8 +4,7 @@
 
     home.file.".config/waybar/style.css".source = ./style.css;
 
-    # TODO: Fix when colours
-    # catppuccin.waybar.mode = "createLink";
+    catppuccin.waybar.mode = "createLink";
 
     programs.waybar = {
       enable = true;
