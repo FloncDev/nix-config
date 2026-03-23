@@ -6,6 +6,7 @@
       programs.fish = {
         shellAliases = {
           neofetch = "fastfetch";
+          cat = "bat";
         };
       };
 
@@ -13,6 +14,15 @@
         btop
         wget
         fastfetch
+        dua
+        bat
+        jq
+        nh
+
+        
+        # Need to figure out devenvs for this
+        nixd
+        nixfmt-rfc-style  
       ];
     };
 }
