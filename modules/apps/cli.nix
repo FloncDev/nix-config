@@ -20,8 +20,12 @@
         nh
 
         # Need to figure out devenvs for this
+        # TODO: Refactor / Look into lorri or alternatives
         nixd
         nixfmt-rfc-style
+        package-version-server
+        direnv
+        nix-direnv
       ];
     };
 }
