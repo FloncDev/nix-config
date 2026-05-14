@@ -1,0 +1,10 @@
+keys:
+  - &admin age1d6au9j05clhaky870dnw0a27fj3h23ufkm9dyffnxtmphavz3s8sdxlzvx
+  - &desktop age1g6n7nyzypfj3t623w6f4s5x0fgyz069v3yyjj5z4xejs3edhe56qpyy764
+
+creation_rules:
+  - path_regex: ^.*$
+    key_groups:
+      - age:
+          - *admin
+          - *desktop

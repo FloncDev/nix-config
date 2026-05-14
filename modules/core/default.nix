@@ -24,6 +24,7 @@
       minimal
       shell
       git
+      secrets
     ];
   };
 }
