@@ -18,6 +18,17 @@
     nixcord.url = "github:kaylorben/nixcord";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        noctalia-qs.follows = "noctalia-qs";
+      };
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
   };

@@ -9,15 +9,17 @@
         default
         boot
         hardware
-        default-display
-        lemurs
-        hyprland
-        default-apps
         earlyoom
+
+        default-display
+        hyprland
+        lemurs
+        noctalia
         keyd
-        catppuccin
 
         flonc
+        default-apps
+        catppuccin
         steam
       ];
 
