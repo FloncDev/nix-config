@@ -7,6 +7,8 @@
       fail2ban.enable = true;
     };
 
+    # TODO: Add ssh public keys of my machines
+
     programs.ssh = {
       # TODO: Better naming scheme for local vs tailscale
       extraConfig = "

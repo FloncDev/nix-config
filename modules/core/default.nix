@@ -6,6 +6,7 @@
       imports = with inputs.self.modules.nixos; [
         minimal
         home-manager
+        secrets
 
         # Under modules/system/
         networking
@@ -24,7 +25,6 @@
       minimal
       shell
       git
-      secrets
     ];
   };
 }
