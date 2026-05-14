@@ -71,6 +71,19 @@
             smart_split = false; # Also enables preserve_split
           };
 
+          # Speed up the animations because they made me kind of sick..
+          animations = {
+            bezier = [
+              "quick, 0.15, 0, 0.1, 1"
+              "easeOutQuint, 0.25, 1, 0.32, 1"
+            ];
+            animation = [
+              "workspaces, 1, 1.0, quick, slide"
+              "windows, 1, 2, easeOutQuint"
+              "fade, 1, 1.7, quick"
+            ];
+          };
+
           bind = [
             "$mod, q, killactive"
             "$mod, space, exec, rofi -show run"
