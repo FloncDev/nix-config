@@ -1,8 +1,12 @@
-{ ... }:
+{ self, ... }:
 {
   flake.modules.homeManager.cli =
     { pkgs, ... }:
     {
+      imports = with self.modules.homeManager; [
+        yazi
+      ];
+
       programs.fish = {
         shellAliases = {
           neofetch = "fastfetch";
@@ -22,7 +26,7 @@
         # Need to figure out devenvs for this
         # TODO: Refactor / Look into lorri or alternatives
         nixd
-        nixfmt-rfc-style
+        nixfmt
         package-version-server
         direnv
         nix-direnv
