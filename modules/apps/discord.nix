@@ -48,7 +48,7 @@
           messageLatency.enable = true;
           messageLinkEmbeds.enable = true;
           messageLogger.enable = true;
-          messageTags.enable = true;
+          # messageTags.enable = true;
           # moreKaomoji.enable = true;
           # moreUserTags.enable = true;
           # noScreensharePreview.enable = true;
