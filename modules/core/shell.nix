@@ -11,7 +11,8 @@
         '';
 
         shellAbbrs = {
-          nrs = "echo testing";
+          # TODO: Change? Or figure out how to have auto detect
+          nrs = "nh os switch /home/flonc/nix#desktop";
         };
       };
 
@@ -31,6 +32,9 @@
             disabled = false;
             symbol = "*";
             format = "[$symbol]($style)";
+          };
+          nix_shell = {
+            impure_msg = "";
           };
         };
       };
