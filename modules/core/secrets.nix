@@ -31,6 +31,8 @@
           ))
             {
               "hello" = { };
+              "wakatime_api_url" = { };
+              "wakatime_api_key" = { };
             };
       };
     };

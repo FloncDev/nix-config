@@ -8,6 +8,7 @@
         # Imports go here
         # TODO: Steam
         nord
+        wakatime
       ];
 
       home-manager.sharedModules = with inputs.self.modules.homeManager; [
