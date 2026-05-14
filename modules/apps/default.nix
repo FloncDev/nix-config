@@ -7,6 +7,7 @@
       imports = with inputs.self.modules.nixos; [
         # Imports go here
         # TODO: Steam
+        nord
       ];
 
       home-manager.sharedModules = with inputs.self.modules.homeManager; [
@@ -19,6 +20,7 @@
             firefox
             chromium
             vscode
+            zed-editor
             lunar-client
             prismlauncher
             pavucontrol
