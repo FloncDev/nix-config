@@ -25,7 +25,7 @@
     };
 
   flake.modules.homeManager.hyprland =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       imports = with inputs.self.modules.homeManager; [
         mako
@@ -33,10 +33,15 @@
         waybar
       ];
 
+      xdg.configFile."hypr/hyprland.lua".source =
+        config.lib.file.mkOutOfStoreSymlink "/home/flonc/nix/modules/system/display/hyprland/hyprland.lua";
+
       wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
+        configType = "hyprlang";
 
+        # This config doesnt actually do anything anymore, update hyprland.lua instead
         settings = {
           "$terminal" = "kitty";
           "$mod" = "SUPER";
@@ -215,12 +220,6 @@
           ];
 
           windowrule = [
-            # "workspace 2 silent, class:vesktop"
-            # "noinitialfocus, class:vesktop"
-            # "stayfocused, class:Rofi"
-            # "opacity 1, content:video"
-            # "float, class:it.mijorus.smile"
-
             "match:class vesktop, workspace 2 silent"
             "match:class vesktop, no_initial_focus on"
             "match:class Spotify, workspace special silent"

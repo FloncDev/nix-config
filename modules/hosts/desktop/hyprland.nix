@@ -8,6 +8,7 @@
 
   flake.modules.homeManager.desktop-hyprland = {
     wayland.windowManager.hyprland = {
+      # These dont do anything anymore
       settings = {
         monitor = [
           "DP-3, 2560x1440@165, 1080x480, 1"
