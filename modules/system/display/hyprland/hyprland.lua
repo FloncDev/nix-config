@@ -212,6 +212,6 @@ hl.window_rule({
 })
 
 hl.workspace_rule({
-    workspace = "special",
+    workspace = "s[true]",
     gaps_out = 100,
 })
