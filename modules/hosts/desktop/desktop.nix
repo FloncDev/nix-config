@@ -10,6 +10,7 @@
         boot
         hardware
         earlyoom
+        tailscale
 
         default-display
         hyprland
