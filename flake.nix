@@ -31,5 +31,6 @@
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     sops-nix.url = "github:Mic92/sops-nix";
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
+    sysc.url = "github:Nomadcxx/sysc-greet";
   };
 }

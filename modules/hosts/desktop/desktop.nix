@@ -13,7 +13,8 @@
 
         default-display
         hyprland
-        lemurs
+        # lemurs
+        sysc
         noctalia
         keyd
 
@@ -26,8 +27,8 @@
       # Only show main monitor on boot
       # Not sure if this actually works
       boot.kernelParams = [
-        "video=DP-3:2560x1440@60e"
-        "video=HDMI-A-1:e"
+        "video=DP-3:2560x1440@60"
+        # "video=HDMI-A-1:e"
       ];
 
       # Fix for bluetooth dongle
