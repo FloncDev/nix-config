@@ -12,8 +12,7 @@
         '';
 
         shellAbbrs = {
-          # TODO: Change? Or figure out how to have auto detect
-          nrs = "nh os switch /home/flonc/nix#desktop";
+          nrs = "nh os switch /etc/nixos#desktop";
         };
       };
 
