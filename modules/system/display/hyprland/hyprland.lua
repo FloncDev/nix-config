@@ -28,9 +28,9 @@ local terminal = "kitty";
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar && hyprpaper")
-    hl.exec_cmd("firefox", { workspace = "1" })
-    hl.exec_cmd("vesktop", { workspace = "2" })
-    hl.exec_cmd("spotify", { workspace = "special" })
+    hl.exec_cmd("firefox", { workspace = "1 silent" })
+    hl.exec_cmd("vesktop", { workspace = "2 silent" })
+    hl.exec_cmd("spotify", { workspace = "special silent" })
 end)
 
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
@@ -214,4 +214,21 @@ hl.window_rule({
 hl.workspace_rule({
     workspace = "s[true]",
     gaps_out = 100,
+})
+
+-- Game workspace
+hl.workspace_rule({
+    workspace = "name:games",
+    monitor = "DP-3",
+    gaps_out = 0,
+    no_border = true,
+    no_shadow = true,
+    no_rounding = true,
+})
+
+hl.window_rule({
+    match = {
+        class = "gamescope"
+    },
+    workspace = "name:games"
 })
