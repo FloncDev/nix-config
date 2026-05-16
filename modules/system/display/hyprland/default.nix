@@ -34,7 +34,7 @@
       ];
 
       xdg.configFile."hypr/hyprland.lua".source =
-        config.lib.file.mkOutOfStoreSymlink "/home/flonc/nix/modules/system/display/hyprland/hyprland.lua";
+        config.lib.file.mkOutOfStoreSymlink "/etc/nixos/modules/system/display/hyprland/hyprland.lua";
 
       wayland.windowManager.hyprland = {
         enable = true;
