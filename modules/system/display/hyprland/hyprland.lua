@@ -19,7 +19,10 @@ hl.workspace_rule({
     monitor = "DP-3",
 })
 
-hl.bind("mouse:277", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"))
+-- hl.bind("mouse:277", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"))
+hl.bind("mouse:277", hl.dsp.exec_cmd("bash -c 'echo run-shortcut:toggleMute | nc -N -U $XDG_RUNTIME_DIR/vesktop.sock'"))
+hl.bind("mouse:276", hl.dsp.exec_cmd("bash -c 'echo run-shortcut:toggleDeafen | nc -N -U $XDG_RUNTIME_DIR/vesktop.sock'"))
+hl.bind("SUPER + escape", hl.dsp.workspace.swap_monitors({ monitor1 = "DP-3", monitor2 = "HDMI-A-1" }))
 
 -- --
 -- The rest of this config is a rewrite of the old one
@@ -28,6 +31,7 @@ local terminal = "kitty";
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar && hyprpaper")
+    hl.exec_cmd("easyeffects --service-mode -w")
     hl.exec_cmd("firefox", { workspace = "1 silent" })
     hl.exec_cmd("vesktop", { workspace = "2 silent" })
     hl.exec_cmd("spotify", { workspace = "special silent" })
@@ -181,13 +185,14 @@ hl.layer_rule({
     },
 })
 
-hl.window_rule({
-    match = { class = "vesktop" },
-    workspace = "2",
-})
+-- hl.window_rule({
+--     match = { class = "vesktop" },
+--     workspace = "2",
+-- })
 
 hl.window_rule({
-    match = { class = "vesktop" },
+    match = { title = "^(Discord)$" },
+    workspace = "2",
     no_initial_focus = true,
 })
 
