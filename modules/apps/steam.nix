@@ -19,6 +19,8 @@
         protonup-qt
         # TODO: Try out protonplus instead and pick the better option
         protonplus
+
+        umu-launcher
       ];
     };
 
