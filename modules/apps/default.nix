@@ -9,6 +9,7 @@
         # TODO: Steam
         nord
         wakatime
+        headsetcontrol
       ];
 
       home-manager.sharedModules = with inputs.self.modules.homeManager; [
@@ -26,6 +27,8 @@
             prismlauncher
             pavucontrol
             multiviewer-for-f1
+            easyeffects
+            obsidian
           ];
         }
       ];
