@@ -13,7 +13,7 @@
         { pkgs, ... }:
         {
           users.users.flonc = {
-            password = "123";
+            hashedPassword = "$y$j9T$D9ygqQDxr4hbRvEMUaJNo.$NWpgsQ/giGjeoC6cVwHciTbT2jrUJDcL2QlMB2nEES3";
             isNormalUser = true;
             extraGroups = [ "wheel" ];
           };
