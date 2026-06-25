@@ -14,7 +14,7 @@
       };
 
       environment.pathsToLink = [
-        "/share/application"
+        "/share/applications"
         "/share/xdg-desktop-portal"
       ];
     };
