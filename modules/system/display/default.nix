@@ -32,8 +32,7 @@
         gnome.gnome-keyring.enable = true;
       };
 
-      environment.systemPackages = with pkgs; [
-        # Better cjk font
+      fonts.packages = with pkgs; [
         noto-fonts-cjk-sans
       ];
     };
