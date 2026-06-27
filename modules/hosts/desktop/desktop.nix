@@ -25,11 +25,8 @@
         steam
       ];
 
-      # Only show main monitor on boot
-      # Not sure if this actually works
       boot.kernelParams = [
         "video=DP-3:2560x1440@60"
-        # "video=HDMI-A-1:e"
 
         "zswap.enabled=1"
       ];
