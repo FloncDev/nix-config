@@ -64,6 +64,7 @@
             fixSpotifyEmbeds.enable = true;
             fixYoutubeEmbeds.enable = true;
             forceOwnerCrown.enable = true;
+            #friendsSince.enable = true;
             fullSearchContext.enable = true;
             gameActivityToggle.enable = true;
             greetStickerPicker.enable = true;

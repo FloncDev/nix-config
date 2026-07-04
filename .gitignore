@@ -1,2 +1,4 @@
 # VM disk image
 *.qcow2
+
+.direnv

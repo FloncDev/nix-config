@@ -13,6 +13,7 @@
 
         shellAbbrs = {
           nrs = "nh os switch /etc/nixos#desktop";
+          nds = "nh darwin switch /etc/nixos#darwin";
         };
       };
 
