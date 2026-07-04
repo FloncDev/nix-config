@@ -23,6 +23,7 @@
         default-apps
         catppuccin
         steam
+        flatpak
       ];
 
       boot.kernelParams = [
