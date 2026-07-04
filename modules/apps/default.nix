@@ -38,6 +38,7 @@
       imports = with inputs.self.modules.homeManager; [
         discord
         spotify
+        anki
         {
           home.packages =
             with pkgs;
