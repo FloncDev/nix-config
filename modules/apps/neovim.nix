@@ -9,6 +9,7 @@
         withNodeJs = true;
         withRuby = false;
         withPython3 = false;
+        defaultEditor = true;
       };
 
       # home.packages = with pkgs; [

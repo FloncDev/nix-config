@@ -23,11 +23,7 @@
         jq
         nh
 
-        # Need to figure out devenvs for this
-        # TODO: Refactor / Look into lorri or alternatives
-        nixd
-        nixfmt
-        package-version-server
+        # TODO: Look into lorri or alternatives
         direnv
         nix-direnv
       ];
