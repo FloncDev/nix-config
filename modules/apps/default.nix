@@ -16,6 +16,7 @@
         # More imports that are home managers here
         discord
         spotify
+        anki
         {
           home.packages = with pkgs; [
             # Desktop applications go here
